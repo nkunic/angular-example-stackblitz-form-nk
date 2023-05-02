@@ -1,1 +1,22 @@
-<form *ngIf="myForm" [formGroup]="myForm"></form>
+<form *ngIf="myForm" [formGroup]="myForm">
+  <app-input
+    [inputId]="'name'"
+    [inputFormControlName]="'name'"
+    [inputSize]="'small'"
+    [inputStatus]="'default'"
+    [inputType]="'text'"
+    [inputPlaceholder]="'Enter your name'"
+  >
+  </app-input>
+  <div class="mt-2">
+    <app-input
+      [inputId]="'age'"
+      [inputFormControlName]="'age'"
+      [inputSize]="'small'"
+      [inputStatus]="'default'"
+      [inputType]="'number'"
+      [inputPlaceholder]="'Enter your age'"
+    >
+    </app-input>
+  </div>
+</form>
