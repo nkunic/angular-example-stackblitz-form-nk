@@ -25,6 +25,7 @@ export class AppComponent implements OnInit {
         },
         Validators.required
       ),
+      email: new FormControl('', Validators.required),
       password: new FormControl('', Validators.required),
       age: new FormControl(
         {
