@@ -25,7 +25,6 @@ export class AppComponent implements OnInit {
         },
         Validators.required
       ),
-      username: new FormControl('', Validators.required),
       password: new FormControl('', Validators.required),
       age: new FormControl(
         {
@@ -41,7 +40,7 @@ export class AppComponent implements OnInit {
     if (this.myForm.invalid) {
       return;
     }
-    name: this.myForm.value.name;
-    age: this.myForm.value.age;
+    console.log(this.myForm);
+    console.log(this.myForm.value);
   }
 }

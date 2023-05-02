@@ -1,5 +1,6 @@
 <div class="d-flex p-4">
   <form *ngIf="myForm" [formGroup]="myForm" (ngSubmit)="onSubmit()">
+    <!--
     <app-input
       [inputId]="'name'"
       [inputFormControlName]="'name'"
@@ -20,10 +21,21 @@
       >
       </app-input>
     </div>
+    -->
+
+    <input type="text" formControlName="name" placeholder="Name" />
+    <input
+      type="password"
+      formControlName="password"
+      placeholder="Password"
+      class="mt-2"
+    />
+    <input type="number" formControlName="age" placeholder="Age" class="mt-2" />
 
     <div class="mt-2">
-      <app-button [buttonIsDisabled]="!myForm.valid" (clickEvent)="onSubmit()">
-      </app-button>
+      <!--<app-button [buttonIsDisabled]="!myForm.valid" (clickEvent)="onSubmit()">
+      </app-button>-->
+      <button [disabled]="myForm.invalid" (click)="onSubmit()">Submit</button>
     </div>
   </form>
 </div>
