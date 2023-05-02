@@ -19,10 +19,29 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     this.myForm = this.fb.group({
       name: new FormControl(
-        { value: '', disabled: false },
+        {
+          value: '',
+          disabled: false,
+        },
         Validators.required
       ),
-      age: new FormControl({ value: '', disabled: true }, Validators.required),
+      username: new FormControl('', Validators.required),
+      password: new FormControl('', Validators.required),
+      age: new FormControl(
+        {
+          value: '',
+          disabled: false,
+        },
+        Validators.required
+      ),
     });
+  }
+
+  submit(): void {
+    if (this.myForm.invalid) {
+      return;
+    }
+    name: this.myForm.value.name;
+    age: this.myForm.value.age;
   }
 }
