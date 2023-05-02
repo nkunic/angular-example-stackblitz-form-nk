@@ -1,26 +1,29 @@
-<form *ngIf="myForm" [formGroup]="myForm" (ngSubmit)="submit()">
-  <app-input
-    [inputId]="'name'"
-    [inputFormControlName]="'name'"
-    [inputSize]="'small'"
-    [inputStatus]="'default'"
-    [inputType]="'text'"
-    [inputPlaceholder]="'Enter your name'"
-  >
-  </app-input>
-  <div class="mt-2">
+<div class="d-flex p-4">
+  <form *ngIf="myForm" [formGroup]="myForm" (ngSubmit)="onSubmit()">
     <app-input
-      [inputId]="'age'"
-      [inputFormControlName]="'age'"
+      [inputId]="'name'"
+      [inputFormControlName]="'name'"
       [inputSize]="'small'"
       [inputStatus]="'default'"
-      [inputType]="'number'"
-      [inputPlaceholder]="'Enter your age'"
+      [inputType]="'text'"
+      [inputPlaceholder]="'Enter your name'"
     >
     </app-input>
-  </div>
+    <div class="mt-2">
+      <app-input
+        [inputId]="'age'"
+        [inputFormControlName]="'age'"
+        [inputSize]="'small'"
+        [inputStatus]="'default'"
+        [inputType]="'number'"
+        [inputPlaceholder]="'Enter your age'"
+      >
+      </app-input>
+    </div>
 
-  <div class="mt-2">
-    <app-button (clickEvent)="submit()">Submit</app-button>
-  </div>
-</form>
+    <div class="mt-2">
+      <app-button [buttonIsDisabled]="!myForm.valid" (clickEvent)="onSubmit()">
+      </app-button>
+    </div>
+  </form>
+</div>

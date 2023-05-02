@@ -37,7 +37,7 @@ export class AppComponent implements OnInit {
     });
   }
 
-  submit(): void {
+  onSubmit(): void {
     if (this.myForm.invalid) {
       return;
     }
