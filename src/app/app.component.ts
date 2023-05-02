@@ -22,10 +22,7 @@ export class AppComponent implements OnInit {
         { value: '', disabled: false },
         Validators.required
       ),
-      age: new FormControl(
-        { value: '', disabled: true },
-        Validators.required
-      ),
+      age: new FormControl({ value: '', disabled: true }, Validators.required),
     });
   }
 }
