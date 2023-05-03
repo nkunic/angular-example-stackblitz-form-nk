@@ -1,19 +1,15 @@
-<input
-  [id]="inputId"
-  [name]="inputName"
-  [formControlName]="inputFormControlName"
-  class="input"
-  [ngClass]="[
-    inputSize ? 'sma-input--size-' + inputSize : '',
-    inputStatus ? 'sma-input--status-' + inputStatus : '',
-    inputIsDisabled ? 'sma-input--disabled' : ''
-  ]"
-  [type]="inputType"
-  [placeholder]="inputPlaceholder"
-  [(ngModel)]="inputValue"
-  [minlength]="inputMinLength"
-  [maxlength]="inputMaxLength"
-  [required]="inputRequiredField"
-  [disabled]="inputIsDisabled"
-  [tabindex]="inputIsDisabled ? '-1' : tabIndex"
-/>
+<div [formGroup]="formGroup">
+  <input
+    [id]="inputId"
+    [name]="inputName"
+    [formControlName]="inputFormControlName"
+    class="input"
+    [ngClass]="[
+      (inputFormControlName.valid && inputFormControlName.touched) ? 'is-valid' : '',
+      (inputFormControlName.invalid && inputFormControlName.touched) ? 'is-invalid' : ''
+    ]"
+    [type]="inputType"
+    [placeholder]="inputPlaceholder"
+    [(ngModel)]="inputValue"
+  />
+</div>
