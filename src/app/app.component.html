@@ -1,31 +1,35 @@
 <div class="d-flex p-4">
-  <form *ngIf="myForm" [formGroup]="myForm" (ngSubmit)="onSubmit()">
+  <form 
+    *ngIf="myForm" 
+    [formGroup]="myForm" 
+    (ngSubmit)="onSubmit()">
     <input 
       type="text" 
       formControlName="name" 
+      class="form-control"
       placeholder="Name" />
     <input
       type="email"
       formControlName="email"
       placeholder="Email"
-      class="mt-2"
+      class="form-control mt-2"
     />
     <input
       type="password"
       formControlName="password"
       placeholder="Password"
-      class="mt-2"
+      class="form-control mt-2"
     />
     <input 
       type="number" 
       formControlName="age" 
       placeholder="Age" 
-      class="mt-2" />
+      class="form-control mt-2" />
     <button 
       type="submit" 
       [disabled]="myForm.invalid" 
       (click)="onSubmit()" 
-      class="mt-2">
+      class="btn btn-warning mt-2">
       Submit
     </button>
   </form>
